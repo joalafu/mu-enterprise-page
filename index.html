@@ -4,112 +4,200 @@
     <meta charset="UTF-8">
     <title>Mu Enterprise</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: radial-gradient(circle at center, #141414 0%, #0b0b0b 70%);
             color: #ffffff;
-            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Fondo animado */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            background: repeating-radial-gradient(circle, rgba(255,215,0,0.05) 0px, transparent 2px);
+            animation: moveBg 60s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveBg {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-200px, -200px); }
         }
 
         header {
-            padding: 60px 20px;
+            padding: 100px 20px;
+            text-align: center;
         }
 
-        h1 {
-            font-size: 48px;
-            margin: 0;
-            letter-spacing: 2px;
+        header h1 {
+            font-size: 56px;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            margin-bottom: 15px;
         }
 
-        p {
+        header p {
             font-size: 18px;
-            color: #cccccc;
-        }
-
-        .section {
-            padding: 60px 20px;
-        }
-
-        .card {
-            background: #1e1e1e;
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 400px;
-            margin: 20px auto;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-        }
-
-        .card a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #ffcc00;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
-
-        .card a:hover {
-            background: #ffaa00;
-        }
-
-        footer {
-            padding: 40px 20px;
-            font-size: 14px;
-            color: #888;
-        }
-
-        .future {
-            margin-top: 20px;
-            font-style: italic;
             color: #aaa;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 34px;
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 15px;
+            padding: 40px 30px;
+            width: 320px;
+            transition: 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,215,0,0.08), transparent 60%);
+            transform: rotate(45deg);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border: 1px solid rgba(255,215,0,0.6);
+            box-shadow: 0 0 30px rgba(255,215,0,0.3);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #ffd700, #ffae00);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 20px rgba(255,215,0,0.6);
+            transform: scale(1.05);
+        }
+
+        .future {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 36px;
+            }
+
+            .cards {
+                flex-direction: column;
+                align-items: center;
             }
         }
+
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Mu Enterprise</h1>
-        <p>Infraestructura y desarrollo de proyectos digitales</p>
-    </header>
+<header>
+    <h1>MU ENTERPRISE</h1>
+    <p>Network de servidores • Infraestructura profesional • Proyectos en expansión</p>
+</header>
 
-    <div class="section">
-        <h2>Nuestros Productos</h2>
+<section class="section">
+    <h2>Nuestros Productos</h2>
+
+    <div class="cards">
 
         <div class="card">
             <h3>MU Origen</h3>
-            <p>Servidor competitivo Season 6 con contenido exclusivo y activo.</p>
-            <a href="https://muorigen.com.ar/" target="_blank">
-                Visitar Sitio
+            <p>Servidor Season 6 competitivo con eventos activos, PvP dinámico y comunidad en crecimiento.</p>
+            <a href="https://muorigen.com.ar/" target="_blank" class="btn">
+                Ingresar al servidor
             </a>
         </div>
 
-        <div class="future">
-            Próximamente más proyectos disponibles...
+        <div class="card">
+            <h3>Próximamente</h3>
+            <p>Nuevos proyectos bajo la infraestructura de Mu Enterprise.</p>
+            <span class="btn" style="opacity:0.6; cursor:default;">
+                En desarrollo
+            </span>
         </div>
+
     </div>
 
-    <footer>
-        © 2026 Mu Enterprise - Todos los derechos reservados<br>
-        Base oficial: https://enterprise.net.ar/
-    </footer>
+    <div class="future">
+        Próxima migración oficial hacia subdominios: origen.enterprise.net.ar
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Mu Enterprise • https://enterprise.net.ar/
+</footer>
 
 </body>
 </html>
