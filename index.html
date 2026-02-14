@@ -26,21 +26,23 @@
             <div class="games-grid">
                 
                 <div class="game-card active-card">
-                    <img src="logo-mu-origen.png" alt="Mu Origen" class="game-logo">
+                    <div class="logo-container">
+                        <img src="logo-mu-origen.png" alt="Mu Origen" class="game-logo logo-default">
+                        <img src="logo-mu-origen+texto.png" alt="Mu Origen Texto" class="game-logo logo-hover">
+                    </div>
                     <p>Servidores con eventos activos, PvP competitivo y crecimiento rápido.</p>
                     <a href="https://origen.enterprise.net.ar/" class="btn-ingresar">Ingresar al servidor</a>
                 </div>
 
                 <div class="game-card card-loading card-spoiler">
-                    <div class="skeleton logo-skeleton"></div>
-                    <p class="spoiler-text">Servidor Mu Animals</p>
+                    <div class="spoiler-wrapper">
+                        <div class="logo-container spoiler-content">
+                            <img src="logo-mu-animals.png" alt="Mu Animals" class="game-logo logo-default">
+                            <img src="logo-mu-animals+texto.png" alt="Mu Animals Texto" class="game-logo logo-hover">
+                        </div>
+                        <p class="spoiler-text spoiler-content">Servidor Mu Animals</p>
+                    </div>
                     <button class="btn-soon" disabled>Próximamente</button>
-                </div>
-
-                <div class="game-card card-loading">
-                    <div class="skeleton logo-skeleton"></div>
-                    <div class="skeleton text-skeleton"></div>
-                    <div class="skeleton btn-skeleton"></div>
                 </div>
 
                 <div class="game-card card-loading">
@@ -54,7 +56,7 @@
 
         <footer>
             <p>&copy; 2026 Enterprise - Todos los derechos reservados</p>
-            </footer>
+        </footer>
     </div>
 
 </body>
