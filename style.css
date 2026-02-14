@@ -13,97 +13,87 @@ body {
     background: var(--bg-dark) url('74c65b0d-da6f-4c82-a6d6-31aa09c0c706.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
-    text-align: center;
+    overflow-x: hidden;
 }
 
-.main-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-.main-logo { max-width: 400px; margin: 25px 0; filter: drop-shadow(0 0 20px rgba(243, 195, 77, 0.4)); }
+/* --- CABECERA Y BANNER --- */
+.header-full { width: 100%; display: flex; justify-content: center; padding: 20px 0; }
+.main-logo { width: 90%; max-width: 400px; height: auto; filter: drop-shadow(0 0 20px rgba(243, 195, 77, 0.4)); }
 
 .hero-banner {
+    width: 100%; display: flex; justify-content: center;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('background-banner.png') center/cover;
-    border-top: 1px solid rgba(243, 195, 77, 0.3);
-    border-bottom: 1px solid rgba(243, 195, 77, 0.3);
-    padding: 25px 20px; margin-bottom: 35px;
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+    border-top: 1px solid rgba(243, 195, 77, 0.3); border-bottom: 1px solid rgba(243, 195, 77, 0.3);
+    padding: 25px 0; margin-bottom: 30px; box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
 }
 
-.hero-content h1 { color: var(--gold); text-transform: uppercase; font-size: 1.8rem; margin: 0 0 8px 0; }
-.hero-content p { font-size: 0.9rem; color: #ccc; margin: 0; }
+.hero-content h1 { color: var(--gold); text-transform: uppercase; font-size: 1.8rem; margin: 0; text-align: center;}
+.hero-content p { font-size: 0.9rem; color: #ccc; margin: 5px 0 0 0; text-align: center;}
 
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-    -webkit-box-reflect: below 2px linear-gradient(transparent, transparent 88%, rgba(255, 255, 255, 0.05));
-}
+/* --- GRID Y CARDS --- */
+.main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 80px; justify-content: center; }
 
-.game-card { perspective: 1200px; height: 420px; }
+.game-card { perspective: 1200px; height: 425px; }
 .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
 .game-card.is-flipped .card-inner { transform: rotateY(180deg); }
 
-/* --- CARAS DE LA CARD --- */
 .card-front, .card-back {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    backface-visibility: hidden;
-    border-radius: 8px;
-    padding: 12px 20px !important;
-    box-sizing: border-box;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    backface-visibility: hidden; border-radius: 8px;
+    padding: 12px 20px !important; box-sizing: border-box;
     display: flex; flex-direction: column;
-    background: var(--card-bg);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
+    background: var(--card-bg); backdrop-filter: blur(15px); border: 1px solid var(--glass-border);
 }
 
-.card-back { 
-    transform: rotateY(180deg); 
-    text-align: left; 
-    align-items: flex-start; 
-    justify-content: flex-start !important; 
+.card-back { transform: rotateY(180deg); text-align: left; align-items: flex-start; justify-content: flex-start !important; }
+
+/* --- AJUSTE DE LEYENDAS (AMARILLO Y CENTRADO) --- */
+.card-intro {
+    width: 100%;
+    text-align: center; /* Centra el contenido de la leyenda */
+    margin-bottom: 10px;
 }
 
-.active-card .card-front, .active-card .card-back { border: 1px solid var(--gold); }
+.highlight-tag {
+    display: block;
+    color: var(--gold); /* AMARILLO */
+    font-weight: bold;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    text-shadow: 0 0 10px rgba(243, 195, 77, 0.3); /* Resplandor sutil */
+    text-transform: uppercase;
+}
 
-/* --- DETALLES SUPERIORES --- */
+/* --- DETALLES TRASEROS SIN ESPACIO --- */
 .details-header { margin: 0 0 8px 0 !important; width: 100%; }
-.details-header h3 { margin: 0 !important; font-size: 1.1rem; color: var(--gold); line-height: 1.1; }
-.version-tag { font-size: 0.6rem; background: rgba(243, 195, 77, 0.1); padding: 1px 4px; border: 1px solid var(--gold); border-radius: 3px; display: inline-block; margin-top: 2px; }
-
-.compact-info { width: 100%; }
-.server-specs { list-style: none; padding: 0; margin: 4px 0; font-size: 0.78rem; line-height: 1.25; }
+.details-header h3 { margin: 0 !important; line-height: 1; font-size: 1.1rem; color: var(--gold); }
+.server-specs { list-style: none; padding: 0; margin: 4px 0; font-size: 0.75rem; }
 .server-specs li { padding: 1px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.rates-box { background: rgba(255,255,255,0.05); padding: 6px; border-radius: 4px; font-size: 0.75rem; margin: 6px 0; border-left: 3px solid var(--gold); }
+.boss-list, .speed-server-info { font-size: 0.72rem; line-height: 1.2; margin-top: 5px; }
 
-.rates-box { background: rgba(255,255,255,0.05); padding: 5px; border-radius: 4px; font-size: 0.72rem; margin: 6px 0; border-left: 3px solid var(--gold); }
-.rates-box span { display: block; }
-
-.boss-list, .speed-server-info, .desc-spoiler { font-size: 0.7rem; line-height: 1.2; margin-top: 4px; color: #aaa; }
-.boss-list strong, .speed-server-info strong { color: var(--gold-light); }
-
-/* --- LOGOS Y BOTONES --- */
-.logo-container { position: relative; width: 100%; height: 80px; margin-bottom: 8px; }
-.game-logo { width: 100%; height: 100%; object-fit: contain; position: absolute; left: 0; transition: opacity 0.5s ease; }
+/* --- LOGOS E INTERCAMBIO --- */
+.logo-container { position: relative; width: 100%; height: 80px; margin-bottom: 10px; display: flex; justify-content: center;}
+.game-logo { width: 100%; height: 100%; object-fit: contain; position: absolute; transition: opacity 0.5s ease; }
 .logo-hover { opacity: 0; }
 .game-card:hover .logo-default { opacity: 0; transition-delay: 1.5s; }
 .game-card:hover .logo-hover { opacity: 1; transition-delay: 1.5s; }
 
-.btn-flip { position: absolute; top: 10px; right: 10px; background: transparent; border: none; color: var(--gold); cursor: pointer; font-size: 1rem; z-index: 10; transition: opacity 0.3s; }
-.btn-flip:hover { opacity: 0.7; }
-
+/* --- BOTONES --- */
+.footer-card-back { margin-top: auto; width: 100%; display: flex; justify-content: center; }
+.btn-flip { position: absolute; top: 10px; right: 10px; background: transparent; border: none; color: var(--gold); cursor: pointer; font-size: 1rem; z-index: 10; }
 .btn-ingresar { background: linear-gradient(to bottom, var(--gold-light), var(--gold), var(--gold-dark)); color: #000; text-decoration: none; padding: 10px 0; border-radius: 4px; font-weight: bold; text-transform: uppercase; font-size: 0.75rem; margin-top: auto; text-align: center; width: 100%; }
-.btn-more { margin-top: auto; color: white; text-decoration: underline; font-size: 0.75rem; align-self: center; padding: 5px 0; }
+.btn-more { color: white; text-decoration: underline; font-size: 0.75rem; padding: 5px 0; }
 .btn-soon { background: rgba(255,255,255,0.06); color: #666; border: 1px solid rgba(255,255,255,0.1); padding: 10px 0; width: 100%; border-radius: 4px; font-size: 0.75rem; margin-top: auto; }
 
 /* --- SPOILER --- */
-.highlight-tag { display: block; color: var(--gold); font-weight: bold; font-size: 0.65rem; letter-spacing: 1.5px; margin-bottom: 2px; }
-.card-intro p { font-size: 0.85rem; margin: 0; line-height: 1.2; }
 .spoiler-content { filter: blur(12px); opacity: 0.3; transition: filter 0.6s, opacity 0.6s; }
 .game-card:hover .spoiler-content { filter: blur(0px); opacity: 1; }
 
 .skeleton { background: rgba(255,255,255,0.03); border-radius: 4px; animation: pulse 1.5s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.5; } }
 .logo-skeleton { width: 120px; height: 70px; margin: 0 auto 15px; }
-.text-skeleton { width: 80%; height: 20px; margin: 0 auto 10px; }
 
-footer { padding: 25px 0; color: #444; font-size: 0.65rem; }
+footer { padding: 25px 0; color: #444; font-size: 0.65rem; text-align: center; }
