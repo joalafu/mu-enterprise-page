@@ -2,178 +2,60 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mu Enterprise</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            width: 100%;
-            overflow-x: hidden; /* 🔥 elimina scroll lateral */
-        }
-
-        body {
-            font-family: 'Orbitron', sans-serif;
-            background: radial-gradient(circle at center, #141414 0%, #0b0b0b 70%);
-            color: #ffffff;
-        }
-
-        /* Fondo animado optimizado */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle, rgba(255,215,0,0.04) 1px, transparent 1px);
-            background-size: 40px 40px;
-            animation: moveBg 80s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes moveBg {
-            from { transform: translate(0, 0); }
-            to { transform: translate(-200px, -200px); }
-        }
-
-        header {
-            padding: 80px 20px 40px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: clamp(32px, 5vw, 56px);
-            color: #ffd700;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-            margin-bottom: 15px;
-        }
-
-        header p {
-            font-size: 16px;
-            color: #aaa;
-        }
-
-        .section {
-            padding: 60px 20px 80px 20px;
-            text-align: center;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section h2 {
-            font-size: clamp(22px, 3vw, 32px);
-            margin-bottom: 40px;
-        }
-
-        .cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            width: 100%;
-        }
-
-        .card {
-            background: linear-gradient(145deg, #1a1a1a, #111);
-            border: 1px solid rgba(255,215,0,0.2);
-            border-radius: 15px;
-            padding: 35px 25px;
-            width: 100%;
-            max-width: 320px; /* 🔥 evita desborde */
-            transition: 0.4s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border: 1px solid rgba(255,215,0,0.6);
-            box-shadow: 0 0 30px rgba(255,215,0,0.3);
-        }
-
-        .card h3 {
-            font-size: 20px;
-            color: #ffd700;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 8px;
-            background: linear-gradient(90deg, #ffd700, #ffae00);
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            box-shadow: 0 0 20px rgba(255,215,0,0.6);
-            transform: scale(1.05);
-        }
-
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 13px;
-            color: #666;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        @media (max-width: 768px) {
-            .cards {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-    </style>
+    <title>Enterprise - Gaming Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<header>
-    <h1>MU ENTERPRISE</h1>
-    <p>Network de servidores • Infraestructura profesional • Proyectos en expansión</p>
-</header>
+    <div class="main-container">
+        <header>
+            <img src="logo-enterprise.png" alt="Enterprise Logo" class="main-logo">
+        </header>
 
-<section class="section">
-    <h2>Nuestros Productos</h2>
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1>Construimos Mundos, Conectamos Jugadores</h1>
+                <p>En Enterprise, creamos, configuramos y mantenemos servidores a tope, rindiendo para tus experiencias. Estabilidad, optimización y comunidades activas.</p>
+            </div>
+        </section>
 
-    <div class="cards">
+        <main>
+            <h2>Nuestros Juegos</h2>
+            <div class="games-grid">
+                
+                <div class="game-card active-card">
+                    <img src="logo-mu-origen.png" alt="Mu Origen" class="game-logo">
+                    <p>Servidores con eventos activos, PvP competitivo y crecimiento rápido.</p>
+                    <a href="#" class="btn-ingresar">Ingresar al servidor</a>
+                </div>
 
-        <div class="card">
-            <h3>MU Origen</h3>
-            <p>Servidor Season 6 competitivo con eventos activos, PvP dinámico y comunidad en crecimiento.</p>
-            <a href="https://origen.enterprise.net.ar/" target="_blank" class="btn">
-                Ingresar al servidor
-            </a>
-        </div>
+                <div class="game-card card-loading card-spoiler">
+                    <div class="skeleton logo-skeleton"></div>
+                    <p class="spoiler-text">Servidor Mu Animals</p>
+                    <button class="btn-soon" disabled>Próximamente</button>
+                </div>
 
-        <div class="card">
-            <h3>Próximamente</h3>
-            <p>Nuevos proyectos bajo la infraestructura de Mu Enterprise.</p>
-            <span class="btn" style="opacity:0.6; cursor:default;">
-                En desarrollo
-            </span>
-        </div>
+                <div class="game-card card-loading">
+                    <div class="skeleton logo-skeleton"></div>
+                    <div class="skeleton text-skeleton"></div>
+                    <div class="skeleton btn-skeleton"></div>
+                </div>
 
+                <div class="game-card card-loading">
+                    <div class="skeleton logo-skeleton"></div>
+                    <div class="skeleton text-skeleton"></div>
+                    <div class="skeleton btn-skeleton"></div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Enterprise - Todos los derechos reservados</p>
+            </footer>
     </div>
-
-</section>
-
-<footer>
-    © 2026 Mu Enterprise • https://enterprise.net.ar/
-</footer>
 
 </body>
 </html>
