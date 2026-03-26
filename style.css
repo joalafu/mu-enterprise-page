@@ -13,8 +13,6 @@
 body {
     margin: 0; padding: 0;
     font-family: 'Segoe UI', Roboto, sans-serif;
-    background: var(--bg-dark) url('74c65b0d-da6f-4c82-a6d6-31aa09c0c706.jpg') no-repeat center center fixed;
-    background-size: cover;
     color: white;
     text-align: center;
     width: 100%;
