@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://enterprise.net.ar/sitemap.xml
