@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://enterprise.net.ar/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://enterprise.net.ar/background-banner.png</image:loc>
+      <image:title>Enterprise Gaming Hub — Servidores Privados de Mu Online</image:title>
+      <image:caption>Banner principal de Enterprise Gaming Hub</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://enterprise.net.ar/logo-enterprise.png</image:loc>
+      <image:title>Enterprise Gaming Hub — Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://enterprise.net.ar/logo-mu-origen.png</image:loc>
+      <image:title>Mu Origen — Servidor Privado de Mu Online Season 6</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://enterprise.net.ar/logo-mu-animals.png</image:loc>
+      <image:title>Mu Animals — Servidor Privado de Mu Online (en desarrollo)</image:title>
+    </image:image>
   </url>
 
 </urlset>
