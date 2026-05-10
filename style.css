@@ -10,6 +10,12 @@
 /* RESET BÁSICO */
 * { box-sizing: border-box; }
 
+/* Color por defecto de links — dorado para mantener la paleta del sitio.
+   Reglas específicas (.btn-ingresar, .btn-more, etc.) siguen ganando por
+   mayor especificidad. */
+a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: var(--gold); }
+
 body {
     margin: 0; padding: 0;
     font-family: 'Segoe UI', Roboto, sans-serif;
@@ -174,8 +180,8 @@ footer { padding: 25px 0; color: #444; font-size: 0.65rem; text-align: center; }
 
 .info-body p { margin: 0 0 14px; }
 .info-body p strong { color: #fff; }
-.info-body a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
-.info-body a:hover { color: var(--gold); }
+.info-body a:not(.btn-ingresar):not(.btn-soon) { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
+.info-body a:not(.btn-ingresar):not(.btn-soon):hover { color: var(--gold); }
 
 .info-body .btn-ingresar,
 .info-body .btn-soon {
