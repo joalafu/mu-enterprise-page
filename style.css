@@ -114,6 +114,168 @@ body {
 
 footer { padding: 25px 0; color: #444; font-size: 0.65rem; text-align: center; }
 
+/* ============================================================
+   INFO SECTIONS — bloques de marca (Mu Origen / Mu Animals)
+   Usa el mismo lenguaje glass + dorado que las game-cards.
+   ============================================================ */
+.info-section {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto 40px;
+    padding: 0 15px;
+    scroll-margin-top: 30px;
+    text-align: left;
+}
+
+.info-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 28px 32px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card.active-card {
+    border-color: var(--gold);
+    box-shadow: 0 0 30px rgba(243, 195, 77, 0.08);
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--glass-border);
+    flex-wrap: wrap;
+}
+
+.info-header h2 {
+    margin: 0;
+    color: var(--gold);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 12px rgba(243, 195, 77, 0.25);
+}
+
+.version-tag.dim {
+    color: #888;
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.info-body {
+    color: #c9c9c9;
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+.info-body p { margin: 0 0 14px; }
+.info-body p strong { color: #fff; }
+.info-body a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
+.info-body a:hover { color: var(--gold); }
+
+.info-body .btn-ingresar,
+.info-body .btn-soon {
+    display: inline-block;
+    width: auto;
+    min-width: 220px;
+    padding: 12px 28px;
+    margin-top: 10px;
+    margin-right: 8px;
+}
+
+/* ============================================================
+   FAQ SECTION
+   ============================================================ */
+.faq-section {
+    width: 100%;
+    max-width: 980px;
+    margin: 20px auto 60px;
+    padding: 0 15px;
+}
+
+.section-title {
+    color: var(--gold);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0 0 24px;
+    text-shadow: 0 0 12px rgba(243, 195, 77, 0.25);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    transition: border-color 0.25s ease;
+}
+
+.faq-item[open] {
+    border-color: rgba(243, 195, 77, 0.5);
+}
+
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 18px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: "＋";
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-left: 12px;
+    transition: transform 0.25s ease;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+    transform: scale(1.1);
+}
+
+.faq-item summary:hover { color: var(--gold-light); }
+
+.faq-item p {
+    margin: 0;
+    padding: 0 18px 16px;
+    color: #b8b8b8;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.faq-item p a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
+.faq-item p a:hover { color: var(--gold); }
+
+@media (max-width: 600px) {
+    .info-card { padding: 20px 18px; }
+    .info-body .btn-ingresar,
+    .info-body .btn-soon { width: 100%; min-width: 0; margin-right: 0; }
+    .faq-item summary { padding: 12px 14px; font-size: 0.88rem; }
+    .faq-item p { padding: 0 14px 14px; }
+}
+
 /* --- AJUSTES PARA PANTALLAS MUY PEQUEÑAS (< 320px) --- */
 @media (max-width: 320px) {
     .main-logo { width: 80%; }
